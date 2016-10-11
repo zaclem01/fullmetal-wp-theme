@@ -1,0 +1,137 @@
+
+/* Topbar
+   ========================================================================== */
+/**
+ * Fixed top bar with menu button.
+ */
+
+.topBar {
+    background: $color_darkGray;
+    color: $color_white;
+    font-size: 24px;
+    height: $height_topBarHeight;
+    left: 0;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 8;
+}
+    .topBar_menuBtn {
+        background: $color_darkGray;
+        border: 1px solid $color_white;
+        border-radius: 2px;
+        font-size: inherit;
+        height: 40px;
+        margin-left: $margin_small;
+        position: absolute;
+        top: 50%; // Center based on top
+        transform: translateY(-50%); // Pull back up half of height to center by middle
+        width: 40px;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        &:active {
+            border: 0;
+            box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.75);
+        }
+
+        &:focus {
+            outline: 0;
+        }
+
+        & i {
+            color: $color_white;
+        }
+    }
+    .topBar_brand {
+        color: $color_white;
+        float: right;
+        font-family: 'Fondamento', cursive, serif;
+        font-size: 1.5em;
+        line-height: $height_topBarHeight;
+        margin-right: $margin_large;
+    }
+
+@media screen and (max-width: 640px) {
+    .topBar_brand {
+        font-size: 1em;
+    }
+}
+
+
+/* Sidebar Menu
+   ========================================================================== */
+/**
+ * Hidden sidebar menu.
+ * Appears when topbar menu button is pressed.
+ * 
+ */
+
+.sidebarWrapper {
+	height: 100%;
+	left: 0;
+	position: fixed;
+	overflow-x: hidden;
+	top: 0;
+	transition: all 0.2s ease;
+	width: 0;
+    z-index: 9; // Higher priority for click events
+
+    &.js-visible {
+        width: $width_sidebarWidth;
+    }
+}
+
+.sidebar {
+    background: $color_medGray; // placeholder
+    box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.75);
+    color: $color_white; // placeholder
+    white-space: nowrap; // Prevent menu items from wrapping when opened/closed
+}
+    .sidebar_header {
+        border-bottom: 2px solid $color_white;
+        border-top: 2px solid $color_white;
+        color: $color_white;
+        font-size: 20px;
+        margin: $margin_large $margin_large 0 $margin_large;
+        padding: $padding_small 0;
+    }
+
+    .sidebar_nav {
+        padding: 0;
+    }
+        .sidebar_nav_item {
+            padding: $padding_small 0 $padding_small $padding_large;
+
+            &:hover {
+                background: $color_white;
+                a {
+                    color: gray;
+                }
+            }
+
+            // Use parent width and height so entire area is clickable
+            a {
+                color: $color_white;
+                display: block;
+                height: inherit;
+                text-decoration: none;
+                width: $width_full;
+            }
+        }
+            .nav_item_subMenu {
+                transition: all 0.2s ease;
+                
+                &.js-hidden {
+                    display: none;
+                }
+
+                &.js-visible {
+                    display: block;
+                }
+            }
+                .subMenu_nav_item {
+                    padding: $padding_small/2 0;
+                }

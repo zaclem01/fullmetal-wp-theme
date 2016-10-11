@@ -1,0 +1,55 @@
+
+/* Footer
+   ========================================================================== */
+
+footer {
+    background: $color_darkGray;
+    color: $color_white;
+    bottom: 0;
+    font-size: 12px;
+    height: $height_footerHeight;
+    left: 0;
+    position: relative;
+    right: 0;
+}
+    .footer_contact {
+        float: left;
+        margin-left: 2%;
+        width: 32%;
+
+        p {
+            margin: 0;
+        }
+    }
+    .footer_social {
+        color: $color_white;
+        float: left;
+        font-size: 32px;
+        text-align: center;
+        width: 32%;
+    }
+        .footer_social_icon {
+            cursor: pointer;
+            margin-left: $margin_small;
+            margin-right: $margin_small;
+
+            &:hover {
+                color: white;
+            }
+        }
+    .footer_copyright {
+        float: left;
+        margin-right: 2%;
+        text-align: right;
+        width: 32%;
+
+        p {
+            margin: 0;
+        }
+    }
+
+@media screen and (max-width: 640px) {
+    footer {
+        padding: 2%;
+    }
+}

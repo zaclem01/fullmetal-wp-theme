@@ -1,0 +1,16 @@
+doctype html
+
+head
+    meta(lang="utf-8")
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    title Fullmetal Photography
+    link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css")
+    link(rel="stylesheet", href="styles.css")
+
+body
+    include ../partials/_header
+    div.contentWrapper
+        block content
+    include ../partials/_footer
+    script(src="bundle.js")
+    script(id="setmore_script", type="text/javascript", src="https://my.setmore.com/js/iframe/setmore_iframe.js")
