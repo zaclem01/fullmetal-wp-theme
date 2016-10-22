@@ -1,0 +1,91 @@
+.blog_intro {
+    margin-left: calc(10% / 3);
+}
+
+.blog_content {
+    display: flex;
+    justify-content: space-around;
+    padding: $padding_large 0;
+}
+    .blog_content_postList {
+        flex: 0 1 60%;
+    }
+        .content_postList_post {
+            background: $color_medGray;
+            box-sizing: border-box;
+            color: $color_white;
+            margin: $margin_large 0;
+            overflow: hidden;
+            padding: $padding_large;
+            width: $width_full;
+
+            &:first-child {
+                margin-top: 0;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+            .postList_post_title {
+                margin-top: 0;
+            }
+            .postList_post_thumbnail {
+                text-align: center;
+
+                img {
+                    height: auto;
+                    max-width: $width_full;
+                }
+            }
+            .postList_post_readMoreBtn {
+                background: $color_maroon;
+                color: $color_white;
+                display: block;
+                float: right;
+                font-weight: bold;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+                text-decoration: none;
+                width: 100px;
+            }
+        .content_postList_pagination {
+            float:right;
+
+            .page-numbers {
+                color: $color_maroon;
+                margin-right: 3px;
+                text-decoration: none;
+            }
+
+            .current {
+                color: $color_lightGray;
+            }
+
+            .dots {
+                background: none;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    .blog_content_sidebarWrapper {
+        flex: 0 1 30%;
+        padding-right: $padding_large;
+    }
+
+@media screen and (max-width: 640px) {
+    .blog_content {
+        flex-wrap: wrap;
+    }
+        .blog_content_postList,
+        .blog_content_sidebarWrapper {
+            flex: 0 1 95%;
+        }
+        .blog_content_sidebarWrapper {
+            margin-top: $margin_large;
+            padding-right: 0;
+        }
+}

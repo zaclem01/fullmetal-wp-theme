@@ -17,6 +17,7 @@
     <div class="service_desc_content">
         <h2 class="desc_content_title"><?php echo CFS()->get( 'service_description_header' ) ?></h2>
         <p class="desc_content_about"><?php echo CFS()->get( 'service_description_content' ) ?></p>
+        <script id="setmore_script" type="text/javascript" src="https://my.setmore.com/js/iframe/setmore_iframe.js"></script>
         <a class="u-btnSkin desc_content_scheduleBtn" id="Setmore_button_iframe", href="https://my.setmore.com/bookingpage/991c5eed-9e11-4704-9a9b-3b5305b09cb1">Schedule your session</a>
     </div>
     <iframe class="service_desc_gallery" width="560" height="315"
@@ -62,7 +63,5 @@
         </ul>
     </div>
 </section>
-
-</div>
 
 <?php get_footer(); ?>

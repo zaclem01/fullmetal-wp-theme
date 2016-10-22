@@ -1,0 +1,74 @@
+.page_contentWrapper {
+    background: $color_lightGray;
+    padding: $padding_large 10%;
+}
+    .page_content {
+        background: $color_white;
+        color: $color_medGray;
+        padding: $padding_large;
+
+        a {
+            font-weight: bold;
+
+            &:link {
+                color: $color_maroon;
+            }
+            &:visited {
+                color: $color_darkGray;
+            }
+        }
+
+        blockquote {
+            border-left: 8px solid $color_maroon;
+            padding-left: $padding_large;
+        }
+
+        img {
+            height: auto;
+            max-width: 100%;
+        }
+
+        // Image styling for Post Types images
+        // https://codex.wordpress.org/Styling_Images_in_Posts_and_Pages
+        img.alignright {
+            float:right; 
+            margin:0 0 1em 1em;
+        }
+        img.alignleft {
+            float:left; 
+            margin:0 1em 1em 0;
+        }
+        img.aligncenter {
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto;
+        }
+        a img.alignright {
+            float:right; 
+            margin:0 0 1em 1em;
+        }
+        a img.alignleft {
+            float:left; 
+            margin:0 1em 1em 0;
+        }
+        a img.aligncenter {
+            display: block; 
+            margin-left: auto; 
+            margin-right: auto
+        }
+
+        ul {
+            list-style: square;
+        }
+    }
+        .page_content_header {
+            h1 {
+                margin-top: 0;
+            }
+        }
+            .content_header_thumbnail {
+                text-align: center;
+            }
+            .page_content_article {
+                overflow: hidden;
+            }

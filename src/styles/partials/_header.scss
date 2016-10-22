@@ -1,22 +1,22 @@
 
-/* Topbar
+/* topbar
    ========================================================================== */
 /**
  * Fixed top bar with menu button.
  */
 
-.topBar {
+.topbar {
     background: $color_darkGray;
     color: $color_white;
     font-size: 24px;
-    height: $height_topBarHeight;
+    height: $height_topbar;
     left: 0;
     position: fixed;
     right: 0;
     top: 0;
     z-index: 8;
 }
-    .topBar_menuBtn {
+    .topbar_menuBtn {
         background: $color_darkGray;
         border: 1px solid $color_white;
         border-radius: 2px;
@@ -45,31 +45,31 @@
             color: $color_white;
         }
     }
-    .topBar_brand {
+    .topbar_brand {
         color: $color_white;
         float: right;
         font-family: 'Fondamento', cursive, serif;
         font-size: 1.5em;
-        line-height: $height_topBarHeight;
+        line-height: $height_topbar;
         margin-right: $margin_large;
     }
 
 @media screen and (max-width: 640px) {
-    .topBar_brand {
+    .topbar_brand {
         font-size: 1em;
     }
 }
 
 
-/* Sidebar Menu
+/* sidemenu Menu
    ========================================================================== */
 /**
- * Hidden sidebar menu.
+ * Hidden sidemenu menu.
  * Appears when topbar menu button is pressed.
  * 
  */
 
-.sidebarWrapper {
+.sidemenuWrapper {
 	height: 100%;
 	left: 0;
 	position: fixed;
@@ -80,17 +80,17 @@
     z-index: 9; // Higher priority for click events
 
     &.js-visible {
-        width: $width_sidebarWidth;
+        width: $width_sidemenu;
     }
 }
 
-.sidebar {
+.sidemenu {
     background: $color_medGray; // placeholder
     box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.75);
     color: $color_white; // placeholder
     white-space: nowrap; // Prevent menu items from wrapping when opened/closed
 }
-    .sidebar_header {
+    .sidemenu_header {
         border-bottom: 2px solid $color_white;
         border-top: 2px solid $color_white;
         color: $color_white;
@@ -99,10 +99,10 @@
         padding: $padding_small 0;
     }
 
-    .sidebar_nav {
+    .sidemenu_nav {
         padding: 0;
     }
-        .sidebar_nav_item {
+        .sidemenu_nav_item {
             padding: $padding_small 0 $padding_small $padding_large;
 
             &:hover {

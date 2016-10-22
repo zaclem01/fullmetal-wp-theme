@@ -1,5 +1,5 @@
 .service_hero {
-    height: 90vh;
+    height: $height_fullscreen;
     position: relative;
     width: $width_full;
 }
@@ -30,7 +30,7 @@
     }
     .service_desc_gallery {
         flex: 0 1 35%;
-        height: 40vh;
+        height: $height_video;
     }
         .desc_content_scheduleBtn {
             width: 30%;

@@ -1,3 +1,5 @@
+</div>
+
 <footer>
     <div class="footer_contact u-vertCenter">
         <p>Todd Hull</p>

@@ -10,36 +10,20 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="topBar">
-        <button class="topBar_menuBtn js-menuBtn"><i class="fa fa-bars"></i></button>
-        <a class="topBar_brand">Fullmetal Photography</a>
+    <div class="topbar">
+        <button class="topbar_menuBtn js-menuBtn"><i class="fa fa-bars"></i></button>
+        <a class="topbar_brand">Fullmetal Photography</a>
     </div>
 
-    <nav class="sidebar sidebarWrapper">
-        <header class="sidebar_header">Menu</header>
-        <!-- <ul class="sidebar_nav">
-            <li class="sidebar_nav_item"><a href="home.html">Home</a></li>
-            <li class="sidebar_nav_item js-subMenu"><a href="#">Services <i class="fa fa-caret-down"></i></a>
-                <div class="nav_item_subMenu js-hidden">
-                    <ul class="subMenu_nav">
-                        <li class="subMenu_nav_item"><a href="wedding.html">Weddings</a></li>
-                        <li class="subMenu_nav_item"><a href="baby-shower.html">Baby Showers</a></li>
-                        <li class="subMenu_nav_item"><a href="graduation.html">Graduation</a></li>
-                        <li class="subMenu_nav_item js-ageGate"><a href="boudoir.html">Boudoir <small>(18+ only)</small></a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="sidebar_nav_item"><a href="http://louisvillefullmetalphotography.pixieset.com/" target="_blank">Customer Access</a></li>
-            <li class="sidebar_nav_item"><a href="guides.html">FAQ & Prep Guides</a></li>
-            <li class="sidebar_nav_item"><a href="#">About</a></li>
-        </ul> -->
+    <nav class="sidemenu sidemenuWrapper">
+        <header class="sidemenu_header">Menu</header>
         <?php 
         $walker = new Custom_Nav_Walker;
 
         wp_nav_menu( array( 
             'theme_location' => 'primary_fm_menu', 
             'container' => false,
-            'menu_class' => 'sidebar_nav',
+            'menu_class' => 'sidemenu_nav',
             'walker' => $walker
         ) ); ?>
     </nav>

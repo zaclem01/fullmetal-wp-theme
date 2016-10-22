@@ -385,8 +385,7 @@ th {
 /**
  * Entry point for entire site css.
  * Variables and utilities are first imported.
- * All pages are based on the _base template.
- * Individual page styles follow after the _base.
+ * All pages follow after
  */
 /* Utility classes
    ========================================================================== */
@@ -420,8 +419,6 @@ th {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%); }
 
-/* Base
-   ========================================================================== */
 /**
  * General site wide-styles.
  * Content wrapper is everything besides header and footer partials.
@@ -437,15 +434,13 @@ ul {
   padding-bottom: 90px;
   position: relative;
   top: 90px; }
-  .contentWrapper p:first-child {
-    margin-top: 0; }
 
-/* Topbar
+/* topbar
    ========================================================================== */
 /**
  * Fixed top bar with menu button.
  */
-.topBar {
+.topbar {
   background: #272123;
   color: white;
   font-size: 24px;
@@ -456,7 +451,7 @@ ul {
   top: 0;
   z-index: 8; }
 
-.topBar_menuBtn {
+.topbar_menuBtn {
   background: #272123;
   border: 1px solid white;
   border-radius: 2px;
@@ -468,17 +463,17 @@ ul {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 40px; }
-  .topBar_menuBtn:hover {
+  .topbar_menuBtn:hover {
     cursor: pointer; }
-  .topBar_menuBtn:active {
+  .topbar_menuBtn:active {
     border: 0;
     box-shadow: inset 0px 0px 3px 3px rgba(0, 0, 0, 0.75); }
-  .topBar_menuBtn:focus {
+  .topbar_menuBtn:focus {
     outline: 0; }
-  .topBar_menuBtn i {
+  .topbar_menuBtn i {
     color: white; }
 
-.topBar_brand {
+.topbar_brand {
   color: white;
   float: right;
   font-family: 'Fondamento', cursive, serif;
@@ -487,17 +482,17 @@ ul {
   margin-right: 20px; }
 
 @media screen and (max-width: 640px) {
-  .topBar_brand {
+  .topbar_brand {
     font-size: 1em; } }
 
-/* Sidebar Menu
+/* sidemenu Menu
    ========================================================================== */
 /**
- * Hidden sidebar menu.
+ * Hidden sidemenu menu.
  * Appears when topbar menu button is pressed.
  * 
  */
-.sidebarWrapper {
+.sidemenuWrapper {
   height: 100%;
   left: 0;
   position: fixed;
@@ -507,16 +502,16 @@ ul {
   transition: all 0.2s ease;
   width: 0;
   z-index: 9; }
-  .sidebarWrapper.js-visible {
+  .sidemenuWrapper.js-visible {
     width: 200px; }
 
-.sidebar {
+.sidemenu {
   background: #2f2d2e;
   box-shadow: 10px 5px 5px 0px rgba(0, 0, 0, 0.75);
   color: white;
   white-space: nowrap; }
 
-.sidebar_header {
+.sidemenu_header {
   border-bottom: 2px solid white;
   border-top: 2px solid white;
   color: white;
@@ -524,16 +519,16 @@ ul {
   margin: 20px 20px 0 20px;
   padding: 10px 0; }
 
-.sidebar_nav {
+.sidemenu_nav {
   padding: 0; }
 
-.sidebar_nav_item {
+.sidemenu_nav_item {
   padding: 10px 0 10px 20px; }
-  .sidebar_nav_item:hover {
+  .sidemenu_nav_item:hover {
     background: white; }
-    .sidebar_nav_item:hover a {
+    .sidemenu_nav_item:hover a {
       color: gray; }
-  .sidebar_nav_item a {
+  .sidemenu_nav_item a {
     color: white;
     display: block;
     height: inherit;
@@ -595,6 +590,43 @@ footer {
 @media screen and (max-width: 640px) {
   footer {
     padding: 2%; } }
+
+.sidebar {
+  color: white; }
+  .sidebar .searchform {
+    background: #2f2d2e;
+    padding: 20px; }
+    .sidebar .searchform label,
+    .sidebar .searchform #s {
+      display: block;
+      margin-bottom: 10px; }
+    .sidebar .searchform label {
+      font-weight: bold; }
+    .sidebar .searchform #s {
+      box-sizing: border-box;
+      color: #4e4c4d;
+      width: 100%; }
+    .sidebar .searchform #searchsubmit {
+      background: #470101;
+      border-style: none;
+      font-weight: bold;
+      padding: 7px; }
+
+.sidebar_section {
+  background: #2f2d2e;
+  margin: 20px 0;
+  padding: 20px; }
+  .sidebar_section h3 {
+    margin-top: 0; }
+  .sidebar_section ul {
+    padding-left: 10px; }
+  .sidebar_section li {
+    margin-bottom: 10px; }
+  .sidebar_section a {
+    color: white;
+    text-decoration: none; }
+  .sidebar_section:last-child {
+    margin-bottom: 0; }
 
 .service_hero {
   height: 90vh;
@@ -699,11 +731,181 @@ footer {
             flex: 0 1 100%;
     margin-bottom: 5vh; } }
 
+.single_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0; }
+
+.single_content_post,
+.single_content_sidebarWrapper {
+  box-sizing: border-box; }
+
+.single_content_post {
+  color: #2f2d2e;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%;
+  padding-left: 20px; }
+  .single_content_post a {
+    font-weight: bold; }
+    .single_content_post a:link {
+      color: #470101; }
+    .single_content_post a:visited {
+      color: #272123; }
+  .single_content_post blockquote {
+    border-left: 8px solid #470101;
+    padding-left: 20px; }
+  .single_content_post img {
+    height: auto;
+    max-width: 100%; }
+  .single_content_post img.alignright {
+    float: right;
+    margin: 0 0 1em 1em; }
+  .single_content_post img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0; }
+  .single_content_post img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .single_content_post a img.alignright {
+    float: right;
+    margin: 0 0 1em 1em; }
+  .single_content_post a img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0; }
+  .single_content_post a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .single_content_post ul {
+    list-style: square; }
+
+.post_header_thumbnail {
+  text-align: center; }
+
+.post_header_date i {
+  color: #470101; }
+
+.content_post_article {
+  overflow: hidden; }
+
+.post_pagination_prev,
+.post_pagination_next {
+  color: #470101;
+  display: inline-block;
+  padding: 5px;
+  text-align: center; }
+  .post_pagination_prev a:link,
+  .post_pagination_prev a:visited,
+  .post_pagination_next a:link,
+  .post_pagination_next a:visited {
+    color: #470101;
+    text-decoration: none; }
+
+.post_pagination_prev {
+  float: left; }
+
+.post_pagination_next {
+  float: right; }
+
+.content_post_meta i {
+  color: #470101; }
+
+.content_post_meta a:link,
+.content_post_meta a:visited,
+.content_post_meta p {
+  color: #4e4c4d; }
+
+.content_post_meta a {
+  text-decoration: none; }
+
+.single_content_sidebarWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  padding-right: 20px; }
+
+@media screen and (max-width: 640px) {
+  .single_content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .single_content_post,
+  .single_content_sidebarWrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 95%;
+            flex: 0 1 95%; }
+  .single_content_post {
+    padding-left: 0; }
+  .single_content_sidebarWrapper {
+    margin-top: 20px;
+    padding-right: 0; }
+  .post_pagination_prev,
+  .post_pagination_next {
+    float: none; }
+  .post_pagination_next {
+    margin-top: 10px; } }
+
+.page_contentWrapper {
+  background: #4e4c4d;
+  padding: 20px 10%; }
+
+.page_content {
+  background: white;
+  color: #2f2d2e;
+  padding: 20px; }
+  .page_content a {
+    font-weight: bold; }
+    .page_content a:link {
+      color: #470101; }
+    .page_content a:visited {
+      color: #272123; }
+  .page_content blockquote {
+    border-left: 8px solid #470101;
+    padding-left: 20px; }
+  .page_content img {
+    height: auto;
+    max-width: 100%; }
+  .page_content img.alignright {
+    float: right;
+    margin: 0 0 1em 1em; }
+  .page_content img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0; }
+  .page_content img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .page_content a img.alignright {
+    float: right;
+    margin: 0 0 1em 1em; }
+  .page_content a img.alignleft {
+    float: left;
+    margin: 0 1em 1em 0; }
+  .page_content a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto; }
+  .page_content ul {
+    list-style: square; }
+
+.page_content_header h1 {
+  margin-top: 0; }
+
+.content_header_thumbnail {
+  text-align: center; }
+
+.page_content_article {
+  overflow: hidden; }
+
 .home_hero {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 80vh;
+  height: 85vh;
   width: 100%; }
 
 .home_hero_column {
@@ -885,17 +1087,84 @@ footer {
         -ms-flex-order: 1;
             order: 1; } }
 
-.wedding_heroImg {
-  background-image: url("./wedding-hero.jpg"); }
+.blog_intro {
+  margin-left: calc(10% / 3); }
 
-.shower_heroImg {
-  background-image: url("./shower-hero.jpg"); }
+.blog_content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 20px 0; }
 
-.grad_heroImg {
-  background-image: url("./grad-hero.jpg"); }
+.blog_content_postList {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 60%;
+          flex: 0 1 60%; }
 
-.boudoir_heroImg {
-  background-image: url("./boudoir-hero-placeholder.jpg"); }
+.content_postList_post {
+  background: #2f2d2e;
+  box-sizing: border-box;
+  color: white;
+  margin: 20px 0;
+  overflow: hidden;
+  padding: 20px;
+  width: 100%; }
+  .content_postList_post:first-child {
+    margin-top: 0; }
+  .content_postList_post:last-child {
+    margin-bottom: 0; }
 
-.faqs_content {
-  padding: 0 20px; }
+.postList_post_title {
+  margin-top: 0; }
+
+.postList_post_thumbnail {
+  text-align: center; }
+  .postList_post_thumbnail img {
+    height: auto;
+    max-width: 100%; }
+
+.postList_post_readMoreBtn {
+  background: #470101;
+  color: white;
+  display: block;
+  float: right;
+  font-weight: bold;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+  width: 100px; }
+
+.content_postList_pagination {
+  float: right; }
+  .content_postList_pagination .page-numbers {
+    color: #470101;
+    margin-right: 3px;
+    text-decoration: none; }
+  .content_postList_pagination .current {
+    color: #4e4c4d; }
+  .content_postList_pagination .dots {
+    background: none; }
+  .content_postList_pagination:last-child {
+    margin-right: 0; }
+
+.blog_content_sidebarWrapper {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 30%;
+          flex: 0 1 30%;
+  padding-right: 20px; }
+
+@media screen and (max-width: 640px) {
+  .blog_content {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .blog_content_postList,
+  .blog_content_sidebarWrapper {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 95%;
+            flex: 0 1 95%; }
+  .blog_content_sidebarWrapper {
+    margin-top: 20px;
+    padding-right: 0; } }

@@ -10082,21 +10082,21 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 exports.default = function () {
-    var $sidebar = (0, _jquery2.default)('.sidebarWrapper');
+    var $sidemenu = (0, _jquery2.default)('.sidemenuWrapper');
 
-    // Open sidebar menu when clicked
+    // Open sidemenu menu when clicked
     (0, _jquery2.default)('.js-menuBtn').click(function (event) {
         event.stopPropagation(); // Stop bubbling to upper DOM elements
-        $sidebar.addClass('js-visible');
+        $sidemenu.addClass('js-visible');
     });
 
-    // Close sidebar menu when anywhere but menu is clicked
-    (0, _jquery2.default)('body > *').not('.sidebarWrapper, .topBar_menuBtn').click(function (event) {
+    // Close sidemenu menu when anywhere but menu is clicked
+    (0, _jquery2.default)('body > *').not('.sidemenuWrapper, .topbar_menuBtn').click(function (event) {
         event.stopPropagation(); // Stop bubbling to upper DOM elements
-        if ($sidebar.hasClass('js-visible')) {
-            $sidebar.removeClass('js-visible');
+        if ($sidemenu.hasClass('js-visible')) {
+            $sidemenu.removeClass('js-visible');
         }
-        // Close the sub menus when sidebar is closed
+        // Close the sub menus when sidemenu is closed
         if ((0, _jquery2.default)('.js-subMenu').children('.nav_item_subMenu').hasClass('js-visible')) {
             (0, _jquery2.default)('.js-subMenu').click();
         }

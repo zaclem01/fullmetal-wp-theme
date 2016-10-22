@@ -1,6 +1,6 @@
 .home_hero {
     display: flex;
-    height: 80vh;
+    height: 85vh;
     width: $width_full;
 }
     .home_hero_column {
@@ -74,7 +74,7 @@
     }
     .home_intro_video {
         flex: 0 1 35%;
-        height: 40vh;
+        height: $height_video;
     }
 
 .home_testimonialsHeader {
@@ -157,7 +157,7 @@
             flex: 0 1 100%;
         }
         .home_hero_column {
-            height: 90vh;
+            height: $height_fullscreen;
         }
 
         .home_blurbs_section,

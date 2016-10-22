@@ -6,6 +6,8 @@ const del = require('del');
 const source = require('vinyl-source-stream');
 const buffer = require('vinyl-buffer');
 const rename = require('gulp-rename');
+const zip = require('gulp-zip');
+const runSeq = require('run-sequence');
 
 const path = require('path');
 
@@ -67,12 +69,25 @@ gulp.task('functions', () => {
         .pipe(gulp.dest(PATHS.dist));
 });
 
-gulp.task('build', ['clean', 'templates', 'sass', 'bundle', 'functions', 'images']);
+gulp.task('zip', () => {
+    return gulp.src('dist/**')
+        .pipe(zip('fullmetal-theme.zip'))
+        .pipe(gulp.dest('./'));
+});
+
+gulp.task('build', ['clean', 'templates', 'sass', 'bundle', 'functions', 'images', 'zip']);
+gulp.task('build', () => {
+    runSeq(
+        'clean',
+        ['templates', 'sass', 'bundle', 'functions', 'images'],
+        'zip'
+    );
+});
 
 gulp.task('watch', ['build'], () => {
-    gulp.watch(path.join(PATHS.sass, '**', '*.scss'), ['sass']);
-    gulp.watch(path.join(PATHS.templates, '**', '*.php'), ['templates']);
-    gulp.watch(path.join(PATHS.js, '**', '*.js'), ['bundle']);
-    gulp.watch(path.join(PATHS.functions, '**', '*.php'), ['functions']);
-    gulp.watch(path.join(PATHS.images, '**'), ['images']);
+    gulp.watch(path.join(PATHS.sass, '**', '*.scss'), () => runSeq('sass', 'zip'));
+    gulp.watch(path.join(PATHS.templates, '**', '*.php'), () => runSeq('templates', 'zip'));
+    gulp.watch(path.join(PATHS.js, '**', '*.js'), () => runSeq('bundle', 'zip'));
+    gulp.watch(path.join(PATHS.functions, '**', '*.php'), () => runSeq('functions', 'zip'));
+    gulp.watch(path.join(PATHS.images, '**'), () => runSeq('images', 'zip'));
 });

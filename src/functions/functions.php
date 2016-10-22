@@ -1,4 +1,6 @@
 <?php
+// Enable thumbnail support
+add_theme_support( 'post-thumbnails' ); 
 
 // Set up custom options menu
 require get_template_directory() . '/customizer.php';
@@ -142,7 +144,7 @@ class Custom_Nav_Walker extends Walker_Nav_Menu {
         if( $depth > 0 ) {
             $classes[] = 'subMenu_nav_item';
         } else {
-            $classes[] = 'sidebar_nav_item';
+            $classes[] = 'sidemenu_nav_item';
         }
 
 		/**

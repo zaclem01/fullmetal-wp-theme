@@ -18,17 +18,41 @@ Author URI: zaclem01.github.io
 /**
  * Entry point for entire site css.
  * Variables and utilities are first imported.
- * All pages are based on the _base template.
- * Individual page styles follow after the _base.
+ * All pages follow after
  */
 @import './modules/_variables';
 @import './modules/_utils';
 
-@import './partials/_base';
-@import './partials/_service';
-@import './_home';
-@import './_wedding';
-@import './_baby-shower';
-@import './_graduation';
-@import './_boudoir';
-@import './guides';
+/**
+ * General site wide-styles.
+ * Content wrapper is everything besides header and footer partials.
+ * Header and footer imports since they will be present on every page.
+ */
+
+@import 'https://fonts.googleapis.com/css?family=Fondamento|Lato';
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+ul {
+    list-style: none;
+}
+
+.contentWrapper {
+    // Compensate for the height moved down from the top
+    padding-bottom: $height_topbar;
+    position: relative;
+    top: $height_topbar;
+}
+
+@import './partials/_header';
+@import './partials/_footer';
+@import './partials/_sidebar';
+
+@import './partials/_service-template';
+@import './partials/_single';
+@import './partials/_page';
+
+@import './_front-page';
+@import './_main';
